@@ -10,9 +10,7 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 /[Aa]ssets/[Vv]endor/*
-/[Aa]ssets/[Vv]endor/
 /Assets/Vendor/*
-/Assets/Vendor/
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
