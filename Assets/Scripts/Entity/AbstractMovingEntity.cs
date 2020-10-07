@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Entity
 {
-    [RequireComponent(typeof(Navigation.Navigator))]
+    [RequireComponent(typeof(Navigator))]
     public abstract class AbstractMovingEntity : AbstractEntity
     {
         public Navigator Navigator { get; set; }
@@ -11,7 +11,7 @@ namespace Entity
         public override void Start()
         {
             base.Start();
-            Navigator = GetComponent<Navigation.Navigator>();
+            Navigator = GetComponent<Navigator>();
         }
     }
 }
