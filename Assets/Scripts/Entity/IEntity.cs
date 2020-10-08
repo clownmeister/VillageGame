@@ -23,6 +23,7 @@ namespace Entity
         }
 
         void Start();
+        void OnTickUpdate();
         void Die();
     }
 }
