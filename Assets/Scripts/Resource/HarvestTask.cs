@@ -54,19 +54,21 @@ namespace Resource
         
         public override void Start(GameObject assignee)
         {
-            _harvester = assignee.GetComponent<Human>().HarvestTaskHandler;
+            _harvester = assignee.GetComponent<Human>().Harvester;
             _navigator = assignee.GetComponent<Navigator>();
             
             Collider collider = _resourceNode.GetComponent<Collider>();
             
             if (null == collider || null == _harvester || null == _navigator)
             {
+                Debug.LogWarning("Invalid task data");
                 Cancel();
                 return;
             }
 
             if (!_navigator.StartMoving(_resourceNode.transform.position, collider))
             {
+                Debug.LogWarning("Invalid task path");
                 Cancel();
                 return;
             }
