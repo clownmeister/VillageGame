@@ -18,7 +18,10 @@ namespace Resource
 
         public override void Handle()
         {
-            if (null == ResourceNode) throw new Exception("Can not access ResourceNode before initialization.");
+            if (null == ResourceNode)
+            {
+                throw new Exception("Can not access ResourceNode before initialization.");
+            }
 
             Harvest();
         }
@@ -29,6 +32,5 @@ namespace Resource
             // yield return new WaitForSeconds(harvestSpeed * resourceNode.resourceData.hardness);
             ResourceNode.HarvestYield(_worker.transform.position);
         }
-
     }
 }

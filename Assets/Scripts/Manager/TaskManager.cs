@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Industry;
 using Resource;
 using Task;
@@ -14,13 +15,13 @@ namespace Manager
         public float debugAssignCooldownSeconds = 1;
         public float debugLastAssigmentMark = 0;
         
-        public TaskList planned;
-        public TaskList inProgress;
+        public List<AbstractTask> planned;
+        public List<AbstractTask> inProgress;
 
         private void Start()
         {
-            planned = new TaskList();
-            inProgress = new TaskList();
+            planned = new List<AbstractTask>();
+            inProgress = new List<AbstractTask>();
         }
 
         private void Update()

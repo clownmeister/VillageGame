@@ -7,12 +7,14 @@ namespace Entity
     [RequireComponent(typeof(RadiusGraphics))]
     public abstract class AbstractEntity : MonoBehaviour, IEntity
     {
+        public int Id { get; set; }
         public RadiusGraphics RadiusGraphics { get; set; }
         public float MaxHealth { get; set; }
         public float CurrentHealth { get; set; }
 
         public virtual void Start()
         {
+            Id = GetInstanceID();
             RadiusGraphics = GetComponent<RadiusGraphics>();
             TickSystemManager.TickEvent += OnTickUpdate;
         }
